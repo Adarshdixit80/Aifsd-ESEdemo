@@ -4,7 +4,11 @@
 import axios from 'axios';
 
 // Base URL: uses Vite proxy in dev, environment variable in production
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://backchodi1.onrender.com';
+// const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://backchodi1.onrender.com';
+const API_BASE_URL =
+import.meta.env.VITE_API_URL ||
+'https://backchodi1.onrender.com/api';
+
 
 // Create Axios instance
 const api = axios.create({

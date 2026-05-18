@@ -21,13 +21,15 @@ app.use(express.json());
 
 // Enable CORS for frontend requests
 app.use(
-  cors({
-    origin: process.env.NODE_ENV === 'production'
-      ? 'https://your-frontend-url.onrender.com'
-      : 'http://localhost:5173',
-    credentials: true,
-  })
+cors({
+origin:
+process.env.NODE_ENV === 'production'
+? 'https://aifsd-esedemo.onrender.com'
+: 'http://localhost:5173',
+credentials: true,
+})
 );
+
 
 // ---- Routes ----
 app.use('/api/auth', require('./routes/authRoutes'));
