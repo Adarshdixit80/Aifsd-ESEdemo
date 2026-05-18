@@ -51,9 +51,19 @@ const Signup = () => {
 
       // Redirect to dashboard after signup
       navigate('/dashboard');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Signup failed. Please try again.');
-    } finally {
+    }  catch (err) {
+console.log("Signup Error:", err);
+console.log("Response:", err.response?.data);
+
+setError(
+err.response?.data?.message ||
+err.message ||
+"Signup failed"
+);
+}
+
+
+    finally {
       setLoading(false);
     }
   };
